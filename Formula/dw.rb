@@ -13,7 +13,7 @@ class Dw < Formula
             onoe "Unsupported macos architecture"
             abort
         end
-    elsif OS.Linux?
+    elsif OS.linux?
         if Hardware::CPU.arm?
             url "https://github.com/dashwave/toolkits/releases/download/v0.0.0-rev-16/dw_linux_arm64.tar.gz"
             sha256 "3a699cb20de43bb57d56bfff0ed6efde638d73d3d8b23a6ba4d89b9c268ebe91"
