@@ -11,7 +11,7 @@ class Dw < Formula
             sha256 "9197b93e8ff3ba7fdcee4a9ec9e0f6d3a526fbac30da25c6d59323bae2c9e78d"
         else
             onoe "Unsupported macos architecture"
-            return
+            abort
         end
     elsif OS.Linux?
         if Hardware::CPU.arm?
@@ -22,10 +22,11 @@ class Dw < Formula
             sha256 "28d75d3143e401722d19cf785452b8e324dc635df6b051c930769d614a2c2b50"
         else
             onoe "Unsupported linux architecture"
-            return
+            abort
+        end
     else
         onoe "Unsupported OS"
-        return
+        abort
     end
   
     version "v0.0.0-rev-16"
