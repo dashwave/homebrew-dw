@@ -30,9 +30,9 @@ class Dw < Formula
     end
   
     version "v0.0.0-rev-16"
-    depends on "rsync"
-    depends on "esolitos/ipa/sshpass"
-    depends on "wget"
+    depends_on "rsync"
+    depends_on "esolitos/ipa/sshpass"
+    depends_on "wget"
 
     def install
       bin.install "dw"
