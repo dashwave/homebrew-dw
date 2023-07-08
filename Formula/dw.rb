@@ -5,10 +5,10 @@ class Dw < Formula
     if OS.mac?
         if Hardware::CPU.arm?
             url "https://github.com/dashwave/toolkits/releases/download/v0.1.0/dw_darwin_arm64.tar.gz"
-            sha256 "b3e33c5c3369336c8f26ac3ba9c46a3bbb4d4820bfa1be3b6a1b065b0b2f7983"
+            sha256 "a34d32449d8165d8f69f114c890a00bc57cd315826a59eb92c7f37a737a0867b"
         elsif Hardware::CPU.intel?
             url "https://github.com/dashwave/toolkits/releases/download/v0.1.0/dw_darwin_amd64.tar.gz"
-            sha256 "9197b93e8ff3ba7fdcee4a9ec9e0f6d3a526fbac30da25c6d59323bae2c9e78d"
+            sha256 "681bf8de0d0419e63beffff07c2dd424940157b42f84367a383640f08e07debd"
         else
             onoe "Unsupported macos architecture"
             abort
@@ -16,10 +16,10 @@ class Dw < Formula
     elsif OS.linux?
         if Hardware::CPU.arm?
             url "https://github.com/dashwave/toolkits/releases/download/v0.1.0/dw_linux_arm64.tar.gz"
-            sha256 "3a699cb20de43bb57d56bfff0ed6efde638d73d3d8b23a6ba4d89b9c268ebe91"
+            sha256 "ddcbbe802ef4a38fc4c37dd5114ab2be93f2d4b9b715d03c358515dd6a7f48f6"
         elsif Hardware::CPU.intel?
             url "https://github.com/dashwave/toolkits/releases/download/v0.1.0/dw_linux_amd64.tar.gz"
-            sha256 "28d75d3143e401722d19cf785452b8e324dc635df6b051c930769d614a2c2b50"
+            sha256 "eca3b3749412594b4a587665e0479c2ef617d6a061d6ea35c18e14247b739d13"
         else
             onoe "Unsupported linux architecture"
             abort
