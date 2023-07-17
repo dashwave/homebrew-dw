@@ -2,12 +2,28 @@ class Dw < Formula
     desc "CLI Tool for dashwave"
     homepage "https://github.com/dashwave/toolkits"
 
+    def getLastestVersion
+        url = URI("https://api.github.com/repos/dashwave/toolkits/releases/latest")
+
+        http = Net::HTTP.new(url.host, url.port)
+        http.use_ssl = true
+
+        request = Net::HTTP::Get.new(url)
+
+        response = http.request(request)
+        parsed_json = JSON.parse(response.body)
+
+        parsed_json['tag_name'].gsub(/\s+/, "")
+    end
+
+    version getLastestVersion
+
     if OS.mac?
         if Hardware::CPU.arm?
-            url "https://github.com/dashwave/toolkits/releases/download/v0.1.0/dw_darwin_arm64.tar.gz"
+            url "https://github.com/dashwave/toolkits/releases/download/" + version + "/dw_darwin_arm64.tar.gz"
             sha256 "a34d32449d8165d8f69f114c890a00bc57cd315826a59eb92c7f37a737a0867b"
         elsif Hardware::CPU.intel?
-            url "https://github.com/dashwave/toolkits/releases/download/v0.1.0/dw_darwin_amd64.tar.gz"
+            url "https://github.com/dashwave/toolkits/releases/download/" + version + "/dw_darwin_amd64.tar.gz"
             sha256 "681bf8de0d0419e63beffff07c2dd424940157b42f84367a383640f08e07debd"
         else
             onoe "Unsupported macos architecture"
@@ -28,8 +44,7 @@ class Dw < Formula
         onoe "Unsupported OS"
         abort
     end
-  
-    version "v0.1.0"
+
     depends_on "rsync"
     depends_on "esolitos/ipa/sshpass"
     depends_on "wget"
