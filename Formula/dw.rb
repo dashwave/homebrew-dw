@@ -66,7 +66,7 @@ class Dw < Formula
     end
 
     def post_install    
-        system "#{bin}/dw", "config", "-v", version.to_s
+        system "dw", "config", "-v", version.to_s
     end
 end
   
