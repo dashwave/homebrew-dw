@@ -64,5 +64,9 @@ class Dw < Formula
     def install
       bin.install "dw"
     end
+
+    def post_install
+        system "dw", "config", "-v", version
+    end
 end
   
