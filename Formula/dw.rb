@@ -66,7 +66,6 @@ class Dw < Formula
     end
 
     def post_install    
-      ohai "Almost there!"
       puts "To complete the setup, run the following command:"
       puts "dw config -v #{version}"
     end
