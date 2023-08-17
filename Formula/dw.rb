@@ -59,8 +59,8 @@ class Dw < Formula
       end
     end
     
-    url latest_release_url
-    sha256 latest_release_sha
+    url Dw.latest_release_url
+    sha256 Dw.latest_release_sha
     version Dw.version
     
     depends_on "rsync"
