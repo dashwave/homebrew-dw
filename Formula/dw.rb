@@ -61,7 +61,7 @@ class Dw < Formula
     depends_on "esolitos/ipa/sshpass"
     depends_on "wget"
     depends_on "scrcpy"
-    depends_on "android-platform-tools"
+    depends_on cask: "android-platform-tools"
   
     def install
       bin.install "dw"
