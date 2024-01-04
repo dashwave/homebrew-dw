@@ -60,7 +60,6 @@ class Dw < Formula
     depends_on "rsync"
     depends_on "esolitos/ipa/sshpass"
     depends_on "wget"
-    depends_on "scrcpy"
   
     def install
       bin.install "dw"
